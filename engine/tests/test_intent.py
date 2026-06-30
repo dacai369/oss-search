@@ -1,4 +1,4 @@
-"""TASK-001 验收测试（对应《意图拆解Schema》§4 与字段规则）。
+"""意图拆解测试（对应《意图拆解Schema》字段规则）。
 
 用假 LLM 客户端，不连网。运行：
     cd engine && python -m pytest tests/ -v

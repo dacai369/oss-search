@@ -1,4 +1,4 @@
-"""TASK-003 验收测试：npm + PyPI 适配器。
+"""npm + PyPI 适配器。
 
 用录制的 API 响应离线跑。
 无 pytest 也可直接跑：python3 tests/test_adapters.py

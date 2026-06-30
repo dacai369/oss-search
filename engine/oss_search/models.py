@@ -1,8 +1,6 @@
 """核心数据结构。
 
 对应《技术规范》§4 与《意图拆解Schema》。
-TASK-001 只用到 IntentSpec / Capability / Constraints；
-Candidate / ScoredCandidate 先定义好，给后续任务卡复用。
 """
 
 from __future__ import annotations
@@ -11,7 +9,7 @@ from dataclasses import dataclass, field, asdict
 from typing import Any, Dict, List, Optional
 
 
-# ============ 意图拆解相关（TASK-001）============
+# ============ 意图拆解相关 ============
 
 @dataclass
 class Constraints:
@@ -125,11 +123,11 @@ class IntentSpec:
         return asdict(self)
 
 
-# ============ 采集 / 评级相关（占位，后续任务卡填充）============
+# ============ 采集 / 评级相关 ============
 
 @dataclass
 class Candidate:
-    """采集层统一输出（《技术规范》§4.2）。后续 TASK-002+ 使用。"""
+    """采集层统一输出（《技术规范》§4.2）。"""
     id: str
     source: str
     name: str
@@ -149,7 +147,7 @@ class Candidate:
     raw: Dict[str, Any] = field(default_factory=dict)
 
 
-# ============ 评级相关（TASK-006+）============
+# ============ 评级相关 ============
 
 @dataclass
 class ScoredCandidate:

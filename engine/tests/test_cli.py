@@ -1,4 +1,4 @@
-"""TASK-008 验收测试：CLI 端到端串联。
+"""CLI 端到端串联。
 
 无 pytest 也可直接跑：python3 tests/test_cli.py
 """

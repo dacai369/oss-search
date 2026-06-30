@@ -1,8 +1,8 @@
-"""质量评级引擎（TASK-006）。
+"""质量评级引擎。
 
 多维打分 + 加权汇总 + 评级 + 人话理由。
-- 维度与权重见《技术规范》§6，MVP 初版可配置。
-- relevance 用 BM25 降级（ADR-006），V2 上 embedding。
+- 维度与权重见《技术规范》§6，可通过 weights 参数覆盖。
+- relevance 用 BM25 近似，V2 计划升级为 embedding。
 - 缺失字段降权而非报错。
 """
 
@@ -99,7 +99,7 @@ def _relevance(
     cand: Candidate, query: str, all_texts: List[str], candidates: List[Candidate],
     candidate_pkg_set: Optional[set] = None,
 ) -> tuple:
-    """BM25 简易实现（ADR-006：MVP 降级）。"""
+    """BM25 简易实现（V2 计划升级为 embedding 语义匹配）。"""
     # candidate_packages 直接命中：用户明确指定的候选包，跳过 BM25 直接给高分
     if candidate_pkg_set:
         name_key = (cand.name or "").lower().replace("-", "_").replace(".", "_")

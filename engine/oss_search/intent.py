@@ -1,10 +1,8 @@
-"""意图拆解模块（TASK-001）。
+"""意图拆解模块。
 
-两条路径（对应修订后的 ADR-005）：
-- 主路径 load_intent_spec(data)：宿主 agent 已产出 JSON，引擎只校验加载。skill 模式用这条。
+两条路径：
+- 主路径 load_intent_spec(data)：宿主 agent 已产出 JSON，引擎只校验加载（Skill 模式）。
 - 兜底 parse_intent(request)：脱离 agent 单跑时，用可选 LLM 客户端自己拆。
-
-SYSTEM_PROMPT 既给兜底用，也是写进 SKILL.md 给宿主 agent 的指令模板（提示词优先，ADR-001）。
 """
 
 from __future__ import annotations

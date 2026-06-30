@@ -1,4 +1,4 @@
-"""TASK-007 验收测试：排序与报告。
+"""排序与报告。
 
 无 pytest 也可直接跑：python3 tests/test_report.py
 """

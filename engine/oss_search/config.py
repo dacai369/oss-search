@@ -1,4 +1,4 @@
-"""配置加载：信源清单.yaml → 启用的源列表（TASK-002+）。"""
+"""配置加载：信源清单.yaml → 启用的源列表。"""
 
 from __future__ import annotations
 

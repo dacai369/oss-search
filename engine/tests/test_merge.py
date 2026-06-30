@@ -1,4 +1,4 @@
-"""TASK-005 验收测试：归并去重 · 实体对齐。
+"""归并去重 · 实体对齐。
 
 无 pytest 也可直接跑：python3 tests/test_merge.py
 """

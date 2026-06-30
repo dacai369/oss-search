@@ -9,7 +9,7 @@ description = "开源意图搜索器核心引擎：意图拆解 → 多源采集
 readme = "README.md"
 requires-python = ">=3.11"
 license = { text = "MIT" }
-# 核心引擎不绑任何 LL/HTTP 依赖（确定性步骤为主，LLM 由宿主 agent 提供，见 ADR-005）。
+# 核心引擎不绑任何 LLM/HTTP 依赖（确定性步骤为主，LLM 由宿主 agent 提供）。
 dependencies = ["rich>=13.0"]
 
 [project.optional-dependencies]

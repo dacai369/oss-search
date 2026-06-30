@@ -1,4 +1,4 @@
-"""采集框架 + GitHub 适配器（TASK-002）。
+"""采集框架 + GitHub 适配器。
 
 定义可插拔 SourceAdapter 协议 + GitHubAdapter 实现：
 - 查询扩展：每个 capability 的关键词 + topic 组合成多条去重查询

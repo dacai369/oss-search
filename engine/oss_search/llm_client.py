@@ -1,11 +1,10 @@
-"""LLM 客户端：**可选**（对应修订后的 ADR-005）。
+"""LLM 客户端（可选，仅脱离 agent 单独运行时使用）。
 
-主路径下引擎不需要它——意图拆解等"动脑"步骤由宿主 agent（Claude Code / Cursor / …）完成，
-agent 直接产出 IntentSpec JSON，引擎用 load_intent_spec() 校验加载。
+主路径下引擎不需要它——意图拆解由宿主 agent 完成，agent 产出 IntentSpec JSON，
+引擎用 load_intent_spec() 校验加载即可。
 
-本模块只用于「脱离 agent 单独跑 / CI」的兜底场景：用任意 OpenAI 兼容端点。
-不绑定 DeepSeek——provider 通过环境变量配置，DeepSeek 只是默认示例。
-openai 依赖在方法内惰性导入，不装也能 import 本模块。
+本模块用于脱离 agent 单跑的兜底场景，支持任意 OpenAI 兼容端点。
+openai 依赖在方法内惰性导入，不安装也能 import 本模块。
 """
 
 from __future__ import annotations

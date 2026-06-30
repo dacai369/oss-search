@@ -1,4 +1,4 @@
-"""TASK-006 验收测试：质量评级引擎。
+"""质量评级引擎。
 
 无 pytest 也可直接跑：python3 tests/test_score.py
 """

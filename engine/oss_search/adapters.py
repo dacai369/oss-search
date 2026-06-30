@@ -1,7 +1,6 @@
-"""包仓库适配器（TASK-003）：npm + PyPI。
+"""包仓库适配器：npm + PyPI。
 
-复用 TASK-002 的 SourceAdapter 协议，按 candidate_packages / 关键词查包，
-从包元数据抽取仓库地址，输出统一 Candidate。
+按 candidate_packages / 关键词查包，从包元数据抽取仓库地址，输出统一 Candidate。
 """
 
 from __future__ import annotations

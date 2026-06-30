@@ -1,6 +1,6 @@
 """命令行入口：`python -m oss_search` / 安装后 `oss-search`。
 
-完整端到端链路（TASK-008）：parse_intent → collect → dedup → score → report。
+完整端到端链路：parse_intent → collect → dedup → score → report。
 """
 
 from __future__ import annotations

@@ -1,4 +1,4 @@
-"""TASK-002 验收测试：SourceAdapter 协议 + GitHubAdapter + 查询扩展。
+"""SourceAdapter 协议 + GitHubAdapter + 查询扩展。
 
 用录制的 GitHub API 响应离线跑（不连网）。
 无 pytest 也可直接跑：python3 tests/test_collect.py
