@@ -51,7 +51,10 @@ def build_report(
     if sources:
         _h(lines, "📡 本次使用信源", 2)
         for s in sources:
-            lines.append(f"- {s}")
+            if s.startswith("custom:"):
+                lines.append(f"- {s}（已记录·采集待 V2）")
+            else:
+                lines.append(f"- {s}")
         lines.append("")
 
     # 按能力分组

@@ -1,31 +1,103 @@
-# 开源意图搜索器（OSS Intent Search）
+# 开源意图搜索器 (OSS Intent Search)
 
-> 输入你想做的功能/架构，自动拆解成能力清单，去 GitHub 等开源平台 + 定向内容源全网扫一遍，做质量评级，给出选型建议。
+> 输入你想做的功能/架构，自动拆解成能力清单，跨 GitHub + npm + PyPI 多源搜索，质量评级，给出选型建议。
 
 ## 一句话定位
-**意图驱动的开源选型助手**：不是让你想关键词，而是从架构需求倒推该用什么。
 
-## 差异化（护城河）
-1. **意图驱动** —— 从需求倒推能力，不靠用户自己想关键词。
-2. **横向质量评级** —— 候选项目放一起打分排序，直接给选型建议。
-3. **中文信源** —— 公众号 / 掘金 / 知乎等，西方工具的盲区。
+**意图驱动的开源选型助手**——不是让你想关键词，而是从需求倒推该用什么。
+
+## 快速安装
+
+### 方式 1：pip 安装（推荐，装后全局可用 `oss-search` 命令）
+
+```bash
+git clone <repo-url> && cd <repo>
+pip install -e ./engine
+oss-search  # 验证：应打印帮助
+```
+
+### 方式 2：作为 AI Skill 安装（Claude Code / Cursor / Hermes）
+
+本仓库根目录下的 `SKILL.md` 即 Skill 文件，复制到你的 AI 工具 skills 目录即可。
+
+- **Claude Code**: `cp SKILL.md ~/.claude/skills/oss-search.md`
+- **Cursor**: 复制到 `.cursor/skills/` 或项目根目录
+- **Hermes**: `cp SKILL.md ~/.hermes/skills/`
+
+### 方式 3：无需安装直接跑（零配置）
+
+```bash
+cd engine
+python3 -m oss_search search --json <intent_spec.json> --out report --md --html
+```
+
+引擎纯 stdlib，零外部依赖。
 
 ---
 
-## 协作机制（重要）
+## 首次配置
 
-本项目用「任务卡 + 指挥官」模式推进：
+**LLM 不需要 key**——意图拆解由宿主 agent（Claude / Cursor / Hermes）完成。
 
-- **指挥官 = Claude**：负责拆任务、发任务卡、检查验收、更新看板。
-- **执行 = 子任务 / 你 / 我**：按任务卡的「验收标准」交付。
-- **唯一事实来源**：
-  - 规范看 [`规范/`](规范/)
-  - 任务看 [`任务卡/`](任务卡/)
-  - 进度看 [`进度看板.md`](进度看板.md)
+仅建议配 `GITHUB_TOKEN`（GitHub 限流优化，60→5000 req/h），缺了也能跑：
 
-### 一张任务卡怎么算「完成」
-必须满足任务卡里的 **验收标准（DoD）** 全部勾选，指挥官复核后才在看板标 `✅ 完成`。
-没满足就退回 `🔄 返工` 并写明原因。
+```bash
+export GITHUB_TOKEN=ghp_xxx  # 可选
+```
+
+脱离 agent 单独跑时如需兜底 LLM（可选）：
+```bash
+pip install openai  # 仅兜底模式需要
+export LLM_API_KEY=sk-xxx  # 任意 OpenAI 兼容端点
+```
+
+---
+
+## 使用示例
+
+### 通过 Skill（一句话触发）
+```
+用户: 帮我找个自部署的文档问答知识库，要支持中文
+→ agent 拆解 IntentSpec → oss-search search --json ... → 返回报告
+```
+
+### 通过命令行（已有 IntentSpec JSON）
+```bash
+oss-search search \
+  --json intent_spec.json \
+  --out report \
+  --md --html --top-n 5
+```
+
+输出：`report.md`（可读）+ `report.html`（浏览器直接打开）。
+
+### 追加自定义信源
+```bash
+oss-search search \
+  --json intent_spec.json \
+  --out report --md --html \
+  --source https://example.com/opensource-projects \
+  --source https://another-site.com/feed.xml
+```
+
+> ⚠️ MVP 阶段自定义源只做登记展示（报告标「已记录·采集待 V2」），真抓留给后续版本。
+
+---
+
+## 运行测试
+
+```bash
+cd engine
+python3 tests/test_intent.py      # 意图拆解 (14 tests)
+python3 tests/test_collect.py     # GitHub 适配器 (9 tests)
+python3 tests/test_adapters.py    # npm + PyPI (9 tests)
+python3 tests/test_merge.py       # 归并去重 (16 tests)
+python3 tests/test_score.py       # 评分引擎 (28 tests)
+python3 tests/test_report.py      # 报告生成 (10 tests)
+python3 tests/test_cli.py         # CLI 端到端 (9 tests)
+```
+
+全部通过：**95/95**。
 
 ---
 
@@ -33,24 +105,42 @@
 
 ```
 开源意图搜索器/
-├── README.md            # 本文件，项目总览
-├── 进度看板.md           # 任务状态总表（指挥官维护）
-├── 规范/
-│   ├── 技术规范.md        # 架构、技术栈、决策记录(ADR)、模块接口约定
-│   ├── 意图拆解Schema.md  # 意图拆解的 JSON Schema + Prompt
-│   └── 信源清单.yaml      # 采集信源白名单（含公众号定向）
-└── 任务卡/
-    ├── TASK-001-意图拆解模块.md
-    ├── TASK-002-采集框架与GitHub适配器.md
-    ├── TASK-003-包仓库适配器.md
-    ├── TASK-004-内容源适配器.md
-    ├── TASK-005-归并去重.md
-    ├── TASK-006-质量评级引擎.md
-    ├── TASK-007-排序与报告.md
-    └── TASK-008-CLI入口与串联.md
+├── SKILL.md              # AI Skill（入口文件）
+├── README.md             # 本文件
+├── 进度看板.md            # 任务状态总表
+├── 规范/                  # 技术规范 + Schema + 信源清单
+├── 任务卡/                # TASK-001 ~ TASK-010
+└── engine/               # Python 引擎
+    ├── pyproject.toml     # pip 安装配置
+    ├── oss_search/        # 核心引擎模块
+    │   ├── intent.py      # 意图拆解 + 校验
+    │   ├── collect.py     # GitHub 适配器
+    │   ├── adapters.py    # npm + PyPI
+    │   ├── merge.py       # 归并去重
+    │   ├── score.py       # 质量评级
+    │   ├── report.py      # 报告生成 (MD + HTML)
+    │   └── __main__.py    # CLI 入口
+    └── tests/             # 95 个测试
 ```
 
-## MVP 范围（先证明核心假设）
-> 需求 → 意图拆解 → GitHub + npm/PyPI → 评级排序 → 报告（CLI）
+## MVP 范围
 
-公众号/中文内容源作为 V2 增量（见 ADR-002）。
+需求 → 意图拆解 → GitHub + npm + PyPI → 归并去重 → 质量评级 → 选型报告（MD + HTML）
+
+中文内容源（公众号/掘金）为 V2 增量。
+
+## 技术决策
+
+| 事项 | 决策 |
+|------|------|
+| LLM | 由宿主 agent 提供，引擎不绑 provider（ADR-005） |
+| Embedding | MVP 用 BM25 降级（ADR-006） |
+| 接口 | Skill 封装 + 静态 HTML 报告（ADR-007） |
+| 信源 | 内置白名单 + 运行时自定义源（ADR-008） |
+| 分发 | GitHub skill + pip 安装（ADR-009） |
+
+---
+
+## License
+
+MIT

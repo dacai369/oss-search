@@ -67,9 +67,28 @@ description: >
 
 ### 第 2 步：跑引擎
 
-```bash
-cd /Users/dacai/Documents/github笔记/开源意图搜索器/engine
+**首次使用需安装一次引擎**（之后跳过此步）：
 
+```bash
+pip install -e ./engine
+```
+
+安装后引擎命令 `oss-search` 全局可用。
+
+**每次搜索**：
+
+```bash
+oss-search search \
+  --json /tmp/intent_spec.json \
+  --out /tmp/oss_report \
+  --md --html --top-n 5
+```
+
+**如果未安装**（直接用源码跑，无需 pip install）：
+先 `cd` 到 skill 所在目录下的 `engine/` 再执行：
+
+```bash
+cd <skill目录>/engine
 python3 -m oss_search search \
   --json /tmp/intent_spec.json \
   --out /tmp/oss_report \
