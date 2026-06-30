@@ -11,3 +11,13 @@ venv/
 .DS_Store
 tests/fixtures/*.json
 tmp/
+
+# 内部过程文件（任务卡、进度看板）
+任务卡/
+进度看板.md
+
+# 生成的报告输出
+engine/e2e_report.html
+engine/e2e_report.md
+*_report.html
+*_report.md
