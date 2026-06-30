@@ -12,6 +12,11 @@ import sys
 import time
 from typing import List
 
+from rich.console import Console
+from rich.panel import Panel
+from rich.table import Table
+from rich import box
+
 from .intent import load_intent_spec, parse_intent
 from .collect import GitHubAdapter, SourceAdapter
 from .adapters import NpmAdapter, PypiAdapter
@@ -19,6 +24,9 @@ from .merge import dedup
 from .score import score, DEFAULT_WEIGHTS
 from .report import build_report, build_html
 from .models import Candidate, IntentSpec, ScoredCandidate
+
+# 统一输出到 stderr，不污染 stdout（stdout 留给 --stdout 报告内容）
+console = Console(stderr=True, highlight=False)
 
 
 def _get_adapters() -> list:
@@ -43,7 +51,7 @@ def _cmd_intent(args: argparse.Namespace) -> int:
     elif args.request:
         spec = parse_intent(args.request)
     else:
-        print("错误：需要提供 request 或 --json 之一", file=sys.stderr)
+        console.print("[red]错误：需要提供 request 或 --json 之一[/red]")
         return 2
     print(json.dumps(spec.to_dict(), ensure_ascii=False, indent=2))
     return 0
@@ -54,20 +62,21 @@ def _cmd_search(args: argparse.Namespace) -> int:
     t0 = time.time()
 
     # ---- 1. 意图拆解 ----
-    print("🔍 意图拆解中...", file=sys.stderr)
+    console.rule("[bold cyan]意图拆解[/bold cyan]")
     if args.json:
         with open(args.json, encoding="utf-8") as f:
             spec = load_intent_spec(json.load(f), original_request=args.request or "")
     elif args.request:
         spec = parse_intent(args.request)
     else:
-        print("错误：需要提供 request 或 --json", file=sys.stderr)
+        console.print("[red]错误：需要提供 request 或 --json[/red]")
         return 2
 
-    print(f"   ✓ 拆出 {len(spec.capabilities)} 个能力：{[c.name for c in spec.capabilities]}", file=sys.stderr)
+    cap_names = [c.name for c in spec.capabilities]
+    console.print(f"  [green]✓[/green] 拆出 [bold]{len(cap_names)}[/bold] 个能力：{cap_names}")
 
     # ---- 2. 采集（多个适配器并行）----
-    print("📡 采集中...", file=sys.stderr)
+    console.rule("[bold cyan]多源采集[/bold cyan]")
     all_candidates: List[Candidate] = []
     sources_used: List[str] = []
     adapters = _get_adapters()
@@ -76,39 +85,61 @@ def _cmd_search(args: argparse.Namespace) -> int:
         for cap in spec.capabilities:
             try:
                 results = adapter.search(cap, spec)
-                print(f"   [{name}] {cap.name} → {len(results)} 个候选", file=sys.stderr)
+                console.print(
+                    f"  [[cyan]{name}[/cyan]] {cap.name} "
+                    f"[dim]→[/dim] [yellow]{len(results)}[/yellow] 个候选"
+                )
                 all_candidates.extend(results)
                 if name not in sources_used:
                     sources_used.append(name)
             except Exception as e:
-                print(f"   ⚠ [{name}] {cap.name} 失败：{e}", file=sys.stderr)
-    # 自定义信源标记
+                console.print(f"  [red]⚠ [{name}] {cap.name} 失败：{e}[/red]")
+
     if getattr(args, "source", None):
         for s in args.source:
             sources_used.append(f"custom:{s}")
-            print(f"   📎 自定义信源已登记：{s}", file=sys.stderr)
-    print(f"   共计 {len(all_candidates)} 个候选（{len(sources_used)} 个源）", file=sys.stderr)
+            console.print(f"  [dim]📎 自定义信源已登记：{s}[/dim]")
+
+    console.print(
+        f"\n  共计 [bold]{len(all_candidates)}[/bold] 个候选"
+        f"（[dim]{len(sources_used)} 个源[/dim]）"
+    )
+
+    grades: dict[str, int] = {"A": 0, "B": 0, "C": 0, "D": 0}
     if not all_candidates:
-        print("⚠️ 未找到任何候选项目。生成空报告。", file=sys.stderr)
-        scored = []
+        console.print("[yellow]⚠️ 未找到任何候选项目。生成空报告。[/yellow]")
+        scored: list = []
     else:
-        print(f"   共计 {len(all_candidates)} 个候选", file=sys.stderr)
         # ---- 3. 归并 ----
+        console.rule("[bold cyan]归并去重[/bold cyan]")
         merged = dedup(all_candidates)
-        print(f"🗂️ 归并去重：{len(all_candidates)} → {len(merged)} 个", file=sys.stderr)
+        console.print(
+            f"  [green]✓[/green] {len(all_candidates)} → [bold]{len(merged)}[/bold] 个"
+        )
+
         # ---- 4. 评级 ----
+        console.rule("[bold cyan]质量评级[/bold cyan]")
         weights = {}
         if args.weights:
             with open(args.weights, encoding="utf-8") as f:
                 weights = json.load(f)
         scored = score(merged, spec, weights=weights or None)
-        grades = {"A": 0, "B": 0, "C": 0, "D": 0}
+
         for s in scored:
             grades[s.grade] = grades.get(s.grade, 0) + 1
-        print(f"⭐ 评级完成：A={grades['A']}, B={grades['B']}, C={grades['C']}, D={grades['D']}", file=sys.stderr)
+
+        grade_table = Table(box=box.SIMPLE, show_header=True, header_style="bold")
+        grade_table.add_column("评级", style="bold", justify="center")
+        grade_table.add_column("数量", justify="right")
+        grade_table.add_column("含义", style="dim")
+        grade_table.add_row("[green]A[/green]", str(grades["A"]), "综合评分 ≥ 0.80")
+        grade_table.add_row("[blue]B[/blue]",  str(grades["B"]), "综合评分 ≥ 0.65")
+        grade_table.add_row("[yellow]C[/yellow]", str(grades["C"]), "综合评分 ≥ 0.50")
+        grade_table.add_row("[red]D[/red]",   str(grades["D"]), "综合评分 < 0.50")
+        console.print(grade_table)
 
     # ---- 5. 报告 ----
-    print("📝 生成报告中...", file=sys.stderr)
+    console.rule("[bold cyan]生成报告[/bold cyan]")
     top_n = args.top_n or 5
     md = build_report(scored, spec, top_n=top_n, sources=sources_used)
 
@@ -118,19 +149,28 @@ def _cmd_search(args: argparse.Namespace) -> int:
         html_path = f"{out_base}.html"
         with open(html_path, "w", encoding="utf-8") as f:
             f.write(html)
-        print(f"   ✓ HTML: {os.path.abspath(html_path)}", file=sys.stderr)
+        console.print(f"  [green]✓[/green] HTML: [link]{os.path.abspath(html_path)}[/link]")
 
     if args.md or (not args.html):
         md_path = f"{out_base}.md"
         with open(md_path, "w", encoding="utf-8") as f:
             f.write(md)
-        print(f"   ✓ Markdown: {os.path.abspath(md_path)}", file=sys.stderr)
+        console.print(f"  [green]✓[/green] Markdown: [link]{os.path.abspath(md_path)}[/link]")
 
     if args.stdout:
         print(md)
 
     elapsed = time.time() - t0
-    print(f"✅ 完成！耗时 {elapsed:.1f}s", file=sys.stderr)
+    console.print(
+        Panel(
+            f"[bold green]完成！[/bold green]  耗时 {elapsed:.1f}s  |  "
+            f"A=[green]{grades.get('A',0)}[/green]  "
+            f"B=[blue]{grades.get('B',0)}[/blue]  "
+            f"C=[yellow]{grades.get('C',0)}[/yellow]  "
+            f"D=[red]{grades.get('D',0)}[/red]",
+            border_style="green",
+        )
+    )
     return 0
 
 
@@ -170,10 +210,10 @@ def main(argv=None) -> int:
     try:
         return args.func(args)
     except (ValueError, FileNotFoundError, json.JSONDecodeError) as e:
-        print(f"错误：{e}", file=sys.stderr)
+        console.print(f"[red]错误：{e}[/red]")
         return 1
     except KeyboardInterrupt:
-        print("\n中断。", file=sys.stderr)
+        console.print("\n[dim]中断。[/dim]")
         return 130
 
 
