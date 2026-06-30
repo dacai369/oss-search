@@ -24,14 +24,13 @@ oss-search  # 验证：应打印帮助
 - **Cursor**: 复制到 `.cursor/skills/` 或项目根目录
 - **Hermes**: `cp SKILL.md ~/.hermes/skills/`
 
-### 方式 3：无需安装直接跑（零配置）
+### 方式 3：无需安装直接跑（源码运行）
 
 ```bash
 cd engine
+pip install rich  # 唯一外部依赖
 python3 -m oss_search search --json <intent_spec.json> --out report --md --html
 ```
-
-引擎纯 stdlib，零外部依赖。
 
 ---
 
@@ -76,11 +75,8 @@ oss-search search \
 oss-search search \
   --json intent_spec.json \
   --out report --md --html \
-  --source https://example.com/opensource-projects \
-  --source https://another-site.com/feed.xml
+  --source https://example.com/opensource-projects
 ```
-
-> ⚠️ MVP 阶段自定义源只做登记展示（报告标「已记录·采集待 V2」），真抓留给后续版本。
 
 ---
 
@@ -88,28 +84,18 @@ oss-search search \
 
 ```bash
 cd engine
-python3 tests/test_intent.py      # 意图拆解 (14 tests)
-python3 tests/test_collect.py     # GitHub 适配器 (9 tests)
-python3 tests/test_adapters.py    # npm + PyPI (9 tests)
-python3 tests/test_merge.py       # 归并去重 (16 tests)
-python3 tests/test_score.py       # 评分引擎 (28 tests)
-python3 tests/test_report.py      # 报告生成 (10 tests)
-python3 tests/test_cli.py         # CLI 端到端 (9 tests)
+python3 -m pytest tests/
 ```
-
-全部通过：**95/95**。
 
 ---
 
 ## 目录结构
 
 ```
-开源意图搜索器/
-├── SKILL.md              # AI Skill（入口文件）
+oss-search/
+├── SKILL.md              # AI Skill 入口（给 Claude Code / Cursor 等使用）
 ├── README.md             # 本文件
-├── 进度看板.md            # 任务状态总表
-├── 规范/                  # 技术规范 + Schema + 信源清单
-├── 任务卡/                # TASK-001 ~ TASK-010
+├── 规范/                  # Schema 定义与信源清单
 └── engine/               # Python 引擎
     ├── pyproject.toml     # pip 安装配置
     ├── oss_search/        # 核心引擎模块
@@ -120,24 +106,23 @@ python3 tests/test_cli.py         # CLI 端到端 (9 tests)
     │   ├── score.py       # 质量评级
     │   ├── report.py      # 报告生成 (MD + HTML)
     │   └── __main__.py    # CLI 入口
-    └── tests/             # 95 个测试
+    └── tests/             # 测试套件
 ```
 
-## MVP 范围
+## 功能范围
 
-需求 → 意图拆解 → GitHub + npm + PyPI → 归并去重 → 质量评级 → 选型报告（MD + HTML）
+当前版本：需求 → 意图拆解 → GitHub + npm + PyPI → 归并去重 → 质量评级 → 选型报告（MD + HTML）
 
-中文内容源（公众号/掘金）为 V2 增量。
+计划中：中文内容源（掘金/公众号）、Embedding 语义匹配。
 
-## 技术决策
+## 设计原则
 
-| 事项 | 决策 |
+| 原则 | 说明 |
 |------|------|
-| LLM | 由宿主 agent 提供，引擎不绑 provider（ADR-005） |
-| Embedding | MVP 用 BM25 降级（ADR-006） |
-| 接口 | Skill 封装 + 静态 HTML 报告（ADR-007） |
-| 信源 | 内置白名单 + 运行时自定义源（ADR-008） |
-| 分发 | GitHub skill + pip 安装（ADR-009） |
+| 无 LLM 绑定 | 意图拆解由宿主 agent 完成，引擎本身不调用任何 LLM |
+| 确定性评分 | 评级基于 BM25 + 多维规则计算，结果可复现 |
+| 最小依赖 | 仅 `rich`（CLI 输出美化），无数据库、无服务 |
+| 自托管友好 | 完全离线可运行，GITHUB_TOKEN 可选 |
 
 ---
 

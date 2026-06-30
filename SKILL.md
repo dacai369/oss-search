@@ -143,7 +143,7 @@ pip install openai  # 仅兜底 LLM 模式需要，skill 模式不需要
 
 ## 注意事项
 
-- 此 skill **不绑定任何 LLM provider**，不要求任何 API key（ADR-005）
+- 此 skill **不绑定任何 LLM provider**，不要求任何 API key
 - GITHUB_TOKEN 仅为 GitHub 限流优化，缺了也能跑
 - 报告中的评分和理由是引擎基于 BM25 + 多维规则的确定性计算，不是 LLM 生成的
-- 自定义信源格式见 ADR-008：通过 `--source URL` 传入，报告中会展示
+- 自定义信源通过 `--source URL` 传入，报告中会展示已登记的信源
