@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "oss-search"
+version = "0.1.0"
+description = "开源意图搜索器核心引擎：意图拆解 → 多源采集 → 质量评级 → 选型报告"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+# 核心引擎不绑任何 LL/HTTP 依赖（确定性步骤为主，LLM 由宿主 agent 提供，见 ADR-005）。
+dependencies = []
+
+[project.optional-dependencies]
+# 仅"脱离 agent 单跑/CI 兜底"时才需要：通用 OpenAI 兼容客户端
+llm = ["openai>=1.0"]
+# 开发/测试
+dev = ["pytest>=7.0"]
+
+[project.scripts]
+oss-search = "oss_search.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["oss_search*"]

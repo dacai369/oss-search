@@ -1,0 +1,1772 @@
+{
+  "npm_search": [
+    {
+      "query": "full-text+search",
+      "objects": [
+        {
+          "downloads": {
+            "monthly": 26641580,
+            "weekly": 6642773
+          },
+          "dependents": "572",
+          "updated": "2026-06-29T05:20:18.762Z",
+          "searchScore": 657.7661,
+          "package": {
+            "name": "lunr",
+            "keywords": [
+              "search"
+            ],
+            "version": "2.3.9",
+            "description": "Simple full-text search in your browser.",
+            "sanitized_name": "lunr",
+            "publisher": {
+              "email": "oliver.nightingale1@gmail.com",
+              "username": "olivernn"
+            },
+            "maintainers": [
+              {
+                "email": "oliver.nightingale1@gmail.com",
+                "username": "olivernn"
+              }
+            ],
+            "license": "MIT",
+            "date": "2020-08-19T20:30:07.948Z",
+            "links": {
+              "homepage": "https://lunrjs.com",
+              "repository": "git+https://github.com/olivernn/lunr.js.git",
+              "bugs": "https://github.com/olivernn/lunr.js/issues",
+              "npm": "https://www.npmjs.com/package/lunr"
+            }
+          },
+          "score": {
+            "final": 657.7661,
+            "detail": {
+              "popularity": 1,
+              "quality": 1,
+              "maintenance": 1
+            }
+          },
+          "flags": {
+            "insecure": 0
+          }
+        },
+        {
+          "downloads": {
+            "monthly": 35886,
+            "weekly": 9571
+          },
+          "dependents": "10",
+          "updated": "2026-06-27T08:41:47.736Z",
+          "searchScore": 629.55273,
+          "package": {
+            "name": "@lokidb/full-text-search",
+            "keywords": [],
+            "version": "2.1.0",
+            "description": "A full-text search engine.",
+            "sanitized_name": "@lokidb/full-text-search",
+            "publisher": {
+              "email": "lutztonineubert@gmail.com",
+              "username": "viatorus"
+            },
+            "maintainers": [
+              {
+                "email": "lutztonineubert@gmail.com",
+                "username": "viatorus"
+              }
+            ],
+            "license": "Apache-2.0",
+            "date": "2020-08-23T17:35:55.358Z",
+            "links": {
+              "homepage": "https://github.com/LokiJS-Forge/LokiDB#readme",
+              "repository": "git+https://github.com/LokiJS-Forge/LokiDB.git",
+              "bugs": "https://github.com/LokiJS-Forge/LokiDB/issues",
+              "npm": "https://www.npmjs.com/package/@lokidb/full-text-search"
+            }
+          },
+          "score": {
+            "final": 629.55273,
+            "detail": {
+              "popularity": 1,
+              "quality": 1,
+              "maintenance": 1
+            }
+          },
+          "flags": {
+            "insecure": 0
+          }
+        },
+        {
+          "downloads": {
+            "monthly": 4837091,
+            "weekly": 1248475
+          },
+          "dependents": "348",
+          "updated": "2026-06-29T05:18:51.829Z",
+          "searchScore": 616.5246,
+          "package": {
+            "name": "flexsearch",
+            "keywords": [
+              "fulltext search",
+              "elastic search",
+              "fastest search",
+              "contextual search",
+              "document search",
+              "fuzzy search",
+              "fuzzy match",
+              "search engine"
+            ],
+            "version": "0.8.212",
+            "description": "Next-Generation full-text search library for Browser and Node.js",
+            "sanitized_name": "flexsearch",
+            "publisher": {
+              "email": "thomas@nextapps.de",
+              "username": "nextapps"
+            },
+            "maintainers": [
+              {
+                "email": "thomas@nextapps.de",
+                "username": "nextapps"
+              }
+            ],
+            "license": "Apache-2.0",
+            "date": "2025-09-06T23:41:14.877Z",
+            "links": {
+              "homepage": "https://github.com/nextapps-de/flexsearch/",
+              "repository": "git+https://github.com/nextapps-de/flexsearch.git",
+              "bugs": "https://github.com/nextapps-de/flexsearch/issues",
+              "npm": "https://www.npmjs.com/package/flexsearch"
+            }
+          },
+          "score": {
+            "final": 616.5246,
+            "detail": {
+              "popularity": 1,
+              "quality": 1,
+              "maintenance": 1
+            }
+          },
+          "flags": {
+            "insecure": 0
+          }
+        },
+        {
+          "downloads": {
+            "monthly": 6045458,
+            "weekly": 1434481
+          },
+          "dependents": "526",
+          "updated": "2026-06-29T05:18:56.620Z",
+          "searchScore": 566.3769,
+          "package": {
+            "name": "minisearch",
+            "keywords": [
+              "search",
+              "full text",
+              "fuzzy",
+              "prefix",
+              "auto suggest",
+              "auto complete",
+              "index"
+            ],
+            "version": "7.2.0",
+            "description": "Tiny but powerful full-text search engine for browser and Node",
+            "sanitized_name": "minisearch",
+            "publisher": {
+              "email": "mail@lucaongaro.eu",
+              "username": "lucaong"
+            },
+            "maintainers": [
+              {
+                "email": "mail@lucaongaro.eu",
+                "username": "lucaong"
+              }
+            ],
+            "license": "MIT",
+            "date": "2025-09-16T12:42:12.453Z",
+            "links": {
+              "homepage": "https://lucaong.github.io/minisearch/",
+              "repository": "https://github.com/lucaong/minisearch.git",
+              "bugs": "https://github.com/lucaong/minisearch/issues",
+              "npm": "https://www.npmjs.com/package/minisearch"
+            }
+          },
+          "score": {
+            "final": 566.3769,
+            "detail": {
+              "popularity": 1,
+              "quality": 1,
+              "maintenance": 1
+            }
+          },
+          "flags": {
+            "insecure": 0
+          }
+        },
+        {
+          "downloads": {
+            "monthly": 26063,
+            "weekly": 7065
+          },
+          "dependents": "1",
+          "updated": "2026-06-27T08:44:21.288Z",
+          "searchScore": 451.0109,
+          "package": {
+            "name": "@docmd/plugin-search",
+            "keywords": [
+              "docmd",
+              "plugin",
+              "search",
+              "minisearch",
+              "offline",
+              "indexing",
+              "keyword-matching",
+              "markdown",
+              "minimalist",
+              "zero-config",
+              "site-generator",
+              "static-site-generator",
+              "docs"
+            ],
+            "version": "0.8.9",
+            "description": "Offline full-text search for docmd.",
+            "sanitized_name": "@docmd/plugin-search",
+            "publisher": {
+              "email": "npm-oidc-no-reply@github.com",
+              "trustedPublisher": {
+                "oidcConfigId": "oidc:39637240-3caa-472e-a4fe-5b12b9de6de5",
+                "id": "github"
+              },
+              "username": "GitHub Actions"
+            },
+            "maintainers": [
+              {
+                "email": "hello@mgks.dev",
+                "username": "mgks"
+              }
+            ],
+            "license": "MIT",
+            "date": "2026-06-26T18:09:21.545Z",
+            "links": {
+              "homepage": "https://docmd.io",
+              "repository": "git+https://github.com/docmd-io/docmd.git",
+              "bugs": "https://github.com/docmd-io/docmd/issues",
+              "npm": "https://www.npmjs.com/package/@docmd/plugin-search"
+            }
+          },
+          "score": {
+            "final": 451.0109,
+            "detail": {
+              "popularity": 1,
+              "quality": 1,
+              "maintenance": 1
+            }
+          },
+          "flags": {
+            "insecure": 0
+          }
+        },
+        {
+          "downloads": {
+            "monthly": 128640,
+            "weekly": 31792
+          },
+          "dependents": "24",
+          "updated": "2026-06-29T05:22:05.311Z",
+          "searchScore": 420.96426,
+          "package": {
+            "name": "search-index",
+            "keywords": [
+              "search",
+              "offline",
+              "front-end"
+            ],
+            "version": "6.0.1",
+            "description": "A network resilient, persistent full-text search library for the browser and Node.js",
+            "sanitized_name": "search-index",
+            "publisher": {
+              "email": "fergusmcdowall@gmail.com",
+              "username": "fergie"
+            },
+            "maintainers": [
+              {
+                "email": "fergusmcdowall@gmail.com",
+                "username": "fergie"
+              },
+              {
+                "email": "espen.klem@gmail.com",
+                "username": "eklem"
+              },
+              {
+                "email": "mats@plysjbyen.net",
+                "username": "mewwts"
+              }
+            ],
+            "license": "MIT",
+            "date": "2025-04-04T11:28:23.981Z",
+            "links": {
+              "homepage": "https://fergiemcdowall.github.io/search-index/",
+              "repository": "git+https://github.com/fergiemcdowall/search-index.git",
+              "bugs": "https://github.com/fergiemcdowall/search-index/issues",
+              "npm": "https://www.npmjs.com/package/search-index"
+            }
+          },
+          "score": {
+            "final": 420.96426,
+            "detail": {
+              "popularity": 1,
+              "quality": 1,
+              "maintenance": 1
+            }
+          },
+          "flags": {
+            "insecure": 0
+          }
+        },
+        {
+          "downloads": {
+            "monthly": 2129,
+            "weekly": 134
+          },
+          "dependents": 0,
+          "updated": "2026-06-28T06:11:13.342Z",
+          "searchScore": 420.87918,
+          "package": {
+            "name": "@toptal/davinci-storybook-full-text-search-addon",
+            "keywords": [
+              "addon",
+              "full-text-search",
+              "storybook"
+            ],
+            "version": "2.0.1",
+            "description": "Full text search addon for Storybook",
+            "sanitized_name": "@toptal/davinci-storybook-full-text-search-addon",
+            "publisher": {
+              "email": "services@toptal.com",
+              "username": "talbot"
+            },
+            "maintainers": [
+              {
+                "email": "services@toptal.com",
+                "username": "talbot"
+              }
+            ],
+            "license": "SEE LICENSE IN LICENSE.MD",
+            "date": "2024-04-29T09:19:25.338Z",
+            "links": {
+              "homepage": "https://github.com/toptal/davinci/tree/master/packages/storybook-full-text-search-addon#readme",
+              "repository": "git+https://github.com/toptal/davinci.git",
+              "bugs": "https://github.com/toptal/davinci/issues",
+              "npm": "https://www.npmjs.com/package/@toptal/davinci-storybook-full-text-search-addon"
+            }
+          },
+          "score": {
+            "final": 420.87918,
+            "detail": {
+              "popularity": 1,
+              "quality": 1,
+              "maintenance": 1
+            }
+          },
+          "flags": {
+            "insecure": 0
+          }
+        },
+        {
+          "downloads": {
+            "monthly": 917,
+            "weekly": 460
+          },
+          "dependents": 0,
+          "updated": "2026-06-23T22:56:21.021Z",
+          "searchScore": 388.1968,
+          "package": {
+            "name": "@tachybase/plugin-full-text-search",
+            "keywords": [
+              "System management"
+            ],
+            "version": "1.6.22",
+            "description": "Provides full text search capability",
+            "sanitized_name": "@tachybase/plugin-full-text-search",
+            "publisher": {
+              "email": "npm-oidc-no-reply@github.com",
+              "actor": {
+                "name": "sealday",
+                "type": "user",
+                "email": "sealday@gmail.com"
+              },
+              "trustedPublisher": {
+                "oidcConfigId": "oidc:86228632-5521-4980-9348-1d0ba90b2122",
+                "id": "github"
+              },
+              "username": "GitHub Actions"
+            },
+            "maintainers": [
+              {
+                "email": "sealday@gmail.com",
+                "username": "sealday"
+              },
+              {
+                "email": "tomyjan6@gmail.com",
+                "username": "tomyjan"
+              }
+            ],
+            "date": "2026-06-16T10:42:28.576Z",
+            "links": {
+              "homepage": "https://github.com/tegojs/tego-standard#readme",
+              "repository": "git+https://github.com/tegojs/tego-standard.git",
+              "bugs": "https://github.com/tegojs/tego-standard/issues",
+              "npm": "https://www.npmjs.com/package/@tachybase/plugin-full-text-search"
+            }
+          },
+          "score": {
+            "final": 388.1968,
+            "detail": {
+              "popularity": 1,
+              "quality": 1,
+              "maintenance": 1
+            }
+          },
+          "flags": {
+            "insecure": 0
+          }
+        },
+        {
+          "downloads": {
+            "monthly": 82956,
+            "weekly": 21359
+          },
+          "dependents": "70",
+          "updated": "2026-06-28T05:19:22.002Z",
+          "searchScore": 385.35806,
+          "package": {
+            "name": "elasticlunr",
+            "keywords": [
+              "search",
+              "text retrieval",
+              "offline search",
+              "full text search"
+            ],
+            "version": "0.9.5",
+            "description": "Lightweight full-text search engine in Javascript for browser search and offline search.",
+            "sanitized_name": "elasticlunr",
+            "publisher": {
+              "email": "watkinsong@163.com",
+              "username": "weixsong"
+            },
+            "maintainers": [
+              {
+                "email": "watkinsong@163.com",
+                "username": "weixsong"
+              }
+            ],
+            "license": "MIT",
+            "date": "2016-09-08T11:00:50.821Z",
+            "links": {
+              "homepage": "http://weixsong.github.io",
+              "repository": "git+https://github.com/weixsong/elasticlunr.js.git",
+              "bugs": "https://github.com/weixsong/elasticlunr.js/issues",
+              "npm": "https://www.npmjs.com/package/elasticlunr"
+            }
+          },
+          "score": {
+            "final": 385.35806,
+            "detail": {
+              "popularity": 1,
+              "quality": 1,
+              "maintenance": 1
+            }
+          },
+          "flags": {
+            "insecure": 0
+          }
+        },
+        {
+          "downloads": {
+            "monthly": 165994,
+            "weekly": 38317
+          },
+          "dependents": "3",
+          "updated": "2026-06-29T08:32:35.550Z",
+          "searchScore": 377.8825,
+          "package": {
+            "name": "@tinacms/search",
+            "keywords": [],
+            "version": "1.2.19",
+            "description": "Full-text search for TinaCMS powered by [search-index](https://github.com/fergiemcdowall/search-index).",
+            "sanitized_name": "@tinacms/search",
+            "publisher": {
+              "email": "npm-oidc-no-reply@github.com",
+              "actor": {
+                "name": "wicksipedia",
+                "type": "user",
+                "email": "matt.wicks@gmail.com"
+              },
+              "trustedPublisher": {
+                "oidcConfigId": "oidc:2e2eeeea-4ad6-4eb9-9844-2ebab6f69264",
+                "id": "github"
+              },
+              "username": "GitHub Actions"
+            },
+            "maintainers": [
+              {
+                "email": "matt.wicks@gmail.com",
+                "username": "wicksipedia"
+              },
+              {
+                "email": "robthomlinson@tina.io",
+                "username": "robt-tina"
+              }
+            ],
+            "license": "SEE LICENSE IN LICENSE",
+            "date": "2026-06-15T23:33:56.515Z",
+            "links": {
+              "homepage": "https://github.com/tinacms/tinacms#readme",
+              "repository": "git+https://github.com/tinacms/tinacms.git",
+              "bugs": "https://github.com/tinacms/tinacms/issues",
+              "npm": "https://www.npmjs.com/package/@tinacms/search"
+            }
+          },
+          "score": {
+            "final": 377.8825,
+            "detail": {
+              "popularity": 1,
+              "quality": 1,
+              "maintenance": 1
+            }
+          },
+          "flags": {
+            "insecure": 0
+          }
+        }
+      ]
+    },
+    {
+      "query": "vector+search",
+      "objects": [
+        {
+          "downloads": {
+            "monthly": 7208677,
+            "weekly": 2776598
+          },
+          "dependents": "872",
+          "updated": "2026-06-29T05:20:17.268Z",
+          "searchScore": 495.29276,
+          "package": {
+            "name": "sqlite-vec",
+            "keywords": [],
+            "version": "0.1.9",
+            "description": "A vector search SQLite extension.",
+            "sanitized_name": "sqlite-vec",
+            "publisher": {
+              "email": "npm-oidc-no-reply@github.com",
+              "trustedPublisher": {
+                "oidcConfigId": "oidc:5287817e-d2a2-4415-90f8-08e775b4c621",
+                "id": "github"
+              },
+              "username": "GitHub Actions"
+            },
+            "maintainers": [
+              {
+                "email": "alexsebastian.garcia@gmail.com",
+                "username": "alex.garcia"
+              }
+            ],
+            "license": "MIT OR Apache",
+            "date": "2026-03-31T08:02:12.760Z",
+            "links": {
+              "homepage": "https://github.com/asg017/sqlite-vec#readme",
+              "repository": "git+https://github.com/asg017/sqlite-vec.git",
+              "bugs": "https://github.com/asg017/sqlite-vec/issues",
+              "npm": "https://www.npmjs.com/package/sqlite-vec"
+            }
+          },
+          "score": {
+            "final": 495.29276,
+            "detail": {
+              "popularity": 1,
+              "quality": 1,
+              "maintenance": 1
+            }
+          },
+          "flags": {
+            "insecure": 0
+          }
+        },
+        {
+          "downloads": {
+            "monthly": 7060473,
+            "weekly": 2188319
+          },
+          "dependents": "4",
+          "updated": "2026-06-29T05:22:51.435Z",
+          "searchScore": 491.32922,
+          "package": {
+            "name": "sqlite-vec-linux-x64",
+            "keywords": [],
+            "version": "0.1.9",
+            "description": "A vector search SQLite extension.",
+            "sanitized_name": "sqlite-vec-linux-x64",
+            "publisher": {
+              "email": "npm-oidc-no-reply@github.com",
+              "trustedPublisher": {
+                "oidcConfigId": "oidc:c3e42e35-9642-4cc6-beda-234cf2f8e54b",
+                "id": "github"
+              },
+              "username": "GitHub Actions"
+            },
+            "maintainers": [
+              {
+                "email": "alexsebastian.garcia@gmail.com",
+                "username": "alex.garcia"
+              }
+            ],
+            "license": "MIT OR Apache",
+            "date": "2026-03-31T08:02:00.895Z",
+            "links": {
+              "homepage": "https://github.com/asg017/sqlite-vec#readme",
+              "repository": "git+https://github.com/asg017/sqlite-vec.git",
+              "bugs": "https://github.com/asg017/sqlite-vec/issues",
+              "npm": "https://www.npmjs.com/package/sqlite-vec-linux-x64"
+            }
+          },
+          "score": {
+            "final": 491.32922,
+            "detail": {
+              "popularity": 1,
+              "quality": 1,
+              "maintenance": 1
+            }
+          },
+          "flags": {
+            "insecure": 0
+          }
+        },
+        {
+          "downloads": {
+            "monthly": 5948047,
+            "weekly": 1167156
+          },
+          "dependents": "1",
+          "updated": "2026-06-29T05:22:21.351Z",
+          "searchScore": 489.77698,
+          "package": {
+            "name": "sqlite-vec-linux-arm64",
+            "keywords": [],
+            "version": "0.1.9",
+            "description": "A vector search SQLite extension.",
+            "sanitized_name": "sqlite-vec-linux-arm64",
+            "publisher": {
+              "email": "npm-oidc-no-reply@github.com",
+              "trustedPublisher": {
+                "oidcConfigId": "oidc:cca3b89c-4bd7-4838-a33e-7c6cd3c42515",
+                "id": "github"
+              },
+              "username": "GitHub Actions"
+            },
+            "maintainers": [
+              {
+                "email": "alexsebastian.garcia@gmail.com",
+                "username": "alex.garcia"
+              }
+            ],
+            "license": "MIT OR Apache",
+            "date": "2026-03-31T08:02:03.592Z",
+            "links": {
+              "homepage": "https://github.com/asg017/sqlite-vec#readme",
+              "repository": "git+https://github.com/asg017/sqlite-vec.git",
+              "bugs": "https://github.com/asg017/sqlite-vec/issues",
+              "npm": "https://www.npmjs.com/package/sqlite-vec-linux-arm64"
+            }
+          },
+          "score": {
+            "final": 489.77698,
+            "detail": {
+              "popularity": 1,
+              "quality": 1,
+              "maintenance": 1
+            }
+          },
+          "flags": {
+            "insecure": 0
+          }
+        },
+        {
+          "downloads": {
+            "monthly": 6076248,
+            "weekly": 1349781
+          },
+          "dependents": "1",
+          "updated": "2026-06-29T05:22:24.369Z",
+          "searchScore": 488.76697,
+          "package": {
+            "name": "sqlite-vec-darwin-x64",
+            "keywords": [],
+            "version": "0.1.9",
+            "description": "A vector search SQLite extension.",
+            "sanitized_name": "sqlite-vec-darwin-x64",
+            "publisher": {
+              "email": "npm-oidc-no-reply@github.com",
+              "trustedPublisher": {
+                "oidcConfigId": "oidc:74abcc88-df41-4b01-80c7-6dc1190c19ac",
+                "id": "github"
+              },
+              "username": "GitHub Actions"
+            },
+            "maintainers": [
+              {
+                "email": "alexsebastian.garcia@gmail.com",
+                "username": "alex.garcia"
+              }
+            ],
+            "license": "MIT OR Apache",
+            "date": "2026-03-31T08:01:58.267Z",
+            "links": {
+              "homepage": "https://github.com/asg017/sqlite-vec#readme",
+              "repository": "git+https://github.com/asg017/sqlite-vec.git",
+              "bugs": "https://github.com/asg017/sqlite-vec/issues",
+              "npm": "https://www.npmjs.com/package/sqlite-vec-darwin-x64"
+            }
+          },
+          "score": {
+            "final": 488.76697,
+            "detail": {
+              "popularity": 1,
+              "quality": 1,
+              "maintenance": 1
+            }
+          },
+          "flags": {
+            "insecure": 0
+          }
+        },
+        {
+          "downloads": {
+            "monthly": 6123089,
+            "weekly": 1364293
+          },
+          "dependents": "1",
+          "updated": "2026-06-29T05:22:51.646Z",
+          "searchScore": 486.89493,
+          "package": {
+            "name": "sqlite-vec-darwin-arm64",
+            "keywords": [],
+            "version": "0.1.9",
+            "description": "A vector search SQLite extension.",
+            "sanitized_name": "sqlite-vec-darwin-arm64",
+            "publisher": {
+              "email": "npm-oidc-no-reply@github.com",
+              "trustedPublisher": {
+                "oidcConfigId": "oidc:01b65170-f800-414d-830f-d4653ccef499",
+                "id": "github"
+              },
+              "username": "GitHub Actions"
+            },
+            "maintainers": [
+              {
+                "email": "alexsebastian.garcia@gmail.com",
+                "username": "alex.garcia"
+              }
+            ],
+            "license": "MIT OR Apache",
+            "date": "2026-03-31T08:01:55.157Z",
+            "links": {
+              "homepage": "https://github.com/asg017/sqlite-vec#readme",
+              "repository": "git+https://github.com/asg017/sqlite-vec.git",
+              "bugs": "https://github.com/asg017/sqlite-vec/issues",
+              "npm": "https://www.npmjs.com/package/sqlite-vec-darwin-arm64"
+            }
+          },
+          "score": {
+            "final": 486.89493,
+            "detail": {
+              "popularity": 1,
+              "quality": 1,
+              "maintenance": 1
+            }
+          },
+          "flags": {
+            "insecure": 0
+          }
+        },
+        {
+          "downloads": {
+            "monthly": 5460514,
+            "weekly": 1309845
+          },
+          "dependents": "2",
+          "updated": "2026-06-29T05:22:11.757Z",
+          "searchScore": 483.1612,
+          "package": {
+            "name": "sqlite-vec-windows-x64",
+            "keywords": [],
+            "version": "0.1.9",
+            "description": "A vector search SQLite extension.",
+            "sanitized_name": "sqlite-vec-windows-x64",
+            "publisher": {
+              "email": "npm-oidc-no-reply@github.com",
+              "trustedPublisher": {
+                "oidcConfigId": "oidc:62a1c559-1598-4339-9584-0325610ed448",
+                "id": "github"
+              },
+              "username": "GitHub Actions"
+            },
+            "maintainers": [
+              {
+                "email": "alexsebastian.garcia@gmail.com",
+                "username": "alex.garcia"
+              }
+            ],
+            "license": "MIT OR Apache",
+            "date": "2026-03-31T08:02:06.535Z",
+            "links": {
+              "homepage": "https://github.com/asg017/sqlite-vec#readme",
+              "repository": "git+https://github.com/asg017/sqlite-vec.git",
+              "bugs": "https://github.com/asg017/sqlite-vec/issues",
+              "npm": "https://www.npmjs.com/package/sqlite-vec-windows-x64"
+            }
+          },
+          "score": {
+            "final": 483.1612,
+            "detail": {
+              "popularity": 1,
+              "quality": 1,
+              "maintenance": 1
+            }
+          },
+          "flags": {
+            "insecure": 0
+          }
+        },
+        {
+          "downloads": {
+            "monthly": 2600855,
+            "weekly": 658768
+          },
+          "dependents": "230",
+          "updated": "2026-06-29T05:18:06.097Z",
+          "searchScore": 428.12875,
+          "package": {
+            "name": "@pinecone-database/pinecone",
+            "keywords": [],
+            "version": "8.0.0",
+            "description": "The official Pinecone TypeScript SDK for building vector search applications with AI/ML.",
+            "sanitized_name": "@pinecone-database/pinecone",
+            "publisher": {
+              "email": "npm-oidc-no-reply@github.com",
+              "trustedPublisher": {
+                "oidcConfigId": "oidc:f4cccf43-9819-4df8-93fc-d567da56e071",
+                "id": "github"
+              },
+              "username": "GitHub Actions"
+            },
+            "maintainers": [
+              {
+                "email": "ops@pinecone.io",
+                "username": "pinecone-ops"
+              }
+            ],
+            "license": "Apache-2.0",
+            "date": "2026-06-16T18:51:42.092Z",
+            "links": {
+              "homepage": "https://github.com/pinecone-io/pinecone-ts-client#readme",
+              "repository": "git+https://github.com/pinecone-io/pinecone-ts-client.git",
+              "bugs": "https://github.com/pinecone-io/pinecone-ts-client/issues",
+              "npm": "https://www.npmjs.com/package/@pinecone-database/pinecone"
+            }
+          },
+          "score": {
+            "final": 428.12875,
+            "detail": {
+              "popularity": 1,
+              "quality": 1,
+              "maintenance": 1
+            }
+          },
+          "flags": {
+            "insecure": 0
+          }
+        },
+        {
+          "downloads": {
+            "monthly": 1706,
+            "weekly": 724
+          },
+          "dependents": "3",
+          "updated": "2026-06-23T08:51:13.944Z",
+          "searchScore": 350.4851,
+          "package": {
+            "name": "client-vector-search",
+            "keywords": [
+              "vector",
+              "search",
+              "embeddings",
+              "nlp",
+              "models"
+            ],
+            "version": "0.2.0",
+            "description": "A client side vector search library",
+            "sanitized_name": "client-vector-search",
+            "publisher": {
+              "email": "yusufhilmicr@gmail.com",
+              "username": "yusufhilmi"
+            },
+            "maintainers": [
+              {
+                "email": "yusufhilmicr@gmail.com",
+                "username": "yusufhilmi"
+              }
+            ],
+            "license": "MIT",
+            "date": "2023-11-14T13:11:15.690Z",
+            "links": {
+              "homepage": "https://github.com/yusufhilmi/client-vector-search#readme",
+              "repository": "git+https://github.com/yusufhilmi/client-vector-search.git",
+              "bugs": "https://github.com/yusufhilmi/client-vector-search/issues",
+              "npm": "https://www.npmjs.com/package/client-vector-search"
+            }
+          },
+          "score": {
+            "final": 350.4851,
+            "detail": {
+              "popularity": 1,
+              "quality": 1,
+              "maintenance": 1
+            }
+          },
+          "flags": {
+            "insecure": 0
+          }
+        },
+        {
+          "downloads": {
+            "monthly": 69447,
+            "weekly": 15946
+          },
+          "dependents": "16",
+          "updated": "2026-06-29T05:21:56.437Z",
+          "searchScore": 343.14172,
+          "package": {
+            "name": "usearch",
+            "keywords": [],
+            "version": "2.25.3",
+            "description": "Smaller & Faster Single-File Vector Search Engine from Unum",
+            "sanitized_name": "usearch",
+            "publisher": {
+              "email": "npm-oidc-no-reply@github.com",
+              "trustedPublisher": {
+                "oidcConfigId": "oidc:b1116b19-9ebc-401e-ab4e-cc16149fd5d8",
+                "id": "github"
+              },
+              "username": "GitHub Actions"
+            },
+            "maintainers": [
+              {
+                "email": "ashvardanian@gmail.com",
+                "username": "ashvardanian"
+              }
+            ],
+            "license": "Apache 2.0",
+            "date": "2026-05-24T14:23:36.810Z",
+            "links": {
+              "homepage": "https://unum-cloud.github.io/USearch/",
+              "repository": "git+https://github.com/unum-cloud/USearch.git",
+              "bugs": "https://github.com/unum-cloud/USearch/issues",
+              "npm": "https://www.npmjs.com/package/usearch"
+            }
+          },
+          "score": {
+            "final": 343.14172,
+            "detail": {
+              "popularity": 1,
+              "quality": 1,
+              "maintenance": 1
+            }
+          },
+          "flags": {
+            "insecure": 0
+          }
+        },
+        {
+          "downloads": {
+            "monthly": 2525945,
+            "weekly": 657702
+          },
+          "dependents": "301",
+          "updated": "2026-06-29T05:20:50.248Z",
+          "searchScore": 341.60297,
+          "package": {
+            "name": "@qdrant/js-client-rest",
+            "keywords": [],
+            "version": "1.18.0",
+            "description": "This repository contains the REST client for the [Qdrant](https://github.com/qdrant/qdrant) vector search engine.",
+            "sanitized_name": "@qdrant/js-client-rest",
+            "publisher": {
+              "email": "tools@qdrant.com",
+              "username": "qdrant-tech"
+            },
+            "maintainers": [
+              {
+                "email": "tools@qdrant.com",
+                "username": "qdrant-tech"
+              },
+              {
+                "email": "mail@luismerino.name",
+                "username": "rendez"
+              }
+            ],
+            "license": "Apache-2.0",
+            "date": "2026-05-11T13:19:15.136Z",
+            "links": {
+              "homepage": "https://github.com/qdrant/qdrant-js#readme",
+              "repository": "git+https://github.com/qdrant/qdrant-js.git",
+              "bugs": "https://github.com/qdrant/qdrant-js/issues",
+              "npm": "https://www.npmjs.com/package/@qdrant/js-client-rest"
+            }
+          },
+          "score": {
+            "final": 341.60297,
+            "detail": {
+              "popularity": 1,
+              "quality": 1,
+              "maintenance": 1
+            }
+          },
+          "flags": {
+            "insecure": 0
+          }
+        }
+      ]
+    },
+    {
+      "query": "elasticsearch",
+      "objects": [
+        {
+          "downloads": {
+            "monthly": 8212456,
+            "weekly": 2147081
+          },
+          "dependents": "1387",
+          "updated": "2026-06-29T16:08:52.900Z",
+          "searchScore": 553.92206,
+          "package": {
+            "name": "@elastic/elasticsearch",
+            "keywords": [
+              "elasticsearch",
+              "elastic",
+              "kibana",
+              "mapping",
+              "REST",
+              "search",
+              "client",
+              "index"
+            ],
+            "version": "9.4.2",
+            "description": "The official Elasticsearch client for Node.js",
+            "sanitized_name": "@elastic/elasticsearch",
+            "publisher": {
+              "email": "npm-oidc-no-reply@github.com",
+              "actor": {
+                "name": "joshmock",
+                "type": "user",
+                "email": "josh@joshmock.com"
+              },
+              "trustedPublisher": {
+                "oidcConfigId": "oidc:58add49e-f65f-4386-bc9f-0b2c28050653",
+                "id": "github"
+              },
+              "username": "GitHub Actions"
+            },
+            "maintainers": [
+              {
+                "email": "npm3@gregback.net",
+                "username": "gtback"
+              },
+              {
+                "email": "ioannis.kakavas@elastic.co",
+                "username": "ikakavas"
+              }
+            ],
+            "license": "Apache-2.0",
+            "date": "2026-05-26T17:58:49.703Z",
+            "links": {
+              "homepage": "http://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/index.html",
+              "repository": "git+https://github.com/elastic/elasticsearch-js.git",
+              "bugs": "https://github.com/elastic/elasticsearch-js/issues",
+              "npm": "https://www.npmjs.com/package/@elastic/elasticsearch"
+            }
+          },
+          "score": {
+            "final": 553.92206,
+            "detail": {
+              "popularity": 1,
+              "quality": 1,
+              "maintenance": 1
+            }
+          },
+          "flags": {
+            "insecure": 0
+          }
+        },
+        {
+          "downloads": {
+            "monthly": 494985,
+            "weekly": 114489
+          },
+          "dependents": "94",
+          "updated": "2026-06-29T05:19:54.262Z",
+          "searchScore": 469.88684,
+          "package": {
+            "name": "@types/elasticsearch",
+            "keywords": [],
+            "version": "5.0.43",
+            "description": "TypeScript definitions for elasticsearch",
+            "sanitized_name": "@types/elasticsearch",
+            "publisher": {
+              "email": "ts-npm-types@microsoft.com",
+              "username": "types"
+            },
+            "maintainers": [
+              {
+                "email": "ts-npm-types@microsoft.com",
+                "username": "types"
+              }
+            ],
+            "license": "MIT",
+            "date": "2023-11-07T02:10:03.584Z",
+            "links": {
+              "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/elasticsearch",
+              "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+              "npm": "https://www.npmjs.com/package/@types/elasticsearch"
+            }
+          },
+          "score": {
+            "final": 469.88684,
+            "detail": {
+              "popularity": 1,
+              "quality": 1,
+              "maintenance": 1
+            }
+          },
+          "flags": {
+            "insecure": 0
+          }
+        },
+        {
+          "downloads": {
+            "monthly": 356350,
+            "weekly": 81045
+          },
+          "dependents": "273",
+          "updated": "2026-06-29T05:18:43.464Z",
+          "searchScore": 460.26675,
+          "package": {
+            "name": "winston-elasticsearch",
+            "keywords": [
+              "logging",
+              "winston",
+              "elasticsearch",
+              "transport",
+              "logstash"
+            ],
+            "version": "0.19.0",
+            "description": "An Elasticsearch transport for winston",
+            "sanitized_name": "winston-elasticsearch",
+            "publisher": {
+              "email": "thomas.hoppe@n-fuse.co",
+              "username": "vanthome"
+            },
+            "maintainers": [
+              {
+                "email": "thomas.hoppe@n-fuse.co",
+                "username": "vanthome"
+              }
+            ],
+            "license": "MIT",
+            "date": "2024-05-11T16:44:08.648Z",
+            "links": {
+              "homepage": "https://github.com/vanthome/winston-elasticsearch#readme",
+              "repository": "git+ssh://git@github.com/vanthome/winston-elasticsearch.git",
+              "bugs": "https://github.com/vanthome/winston-elasticsearch/issues",
+              "npm": "https://www.npmjs.com/package/winston-elasticsearch"
+            }
+          },
+          "score": {
+            "final": 460.26675,
+            "detail": {
+              "popularity": 1,
+              "quality": 1,
+              "maintenance": 1
+            }
+          },
+          "flags": {
+            "insecure": 0
+          }
+        },
+        {
+          "downloads": {
+            "monthly": 196307,
+            "weekly": 49443
+          },
+          "dependents": "33",
+          "updated": "2026-06-29T05:19:48.107Z",
+          "searchScore": 430.45718,
+          "package": {
+            "name": "pino-elasticsearch",
+            "keywords": [
+              "pino",
+              "log",
+              "fast",
+              "elasticsearch",
+              "elastic",
+              "search",
+              "kibana"
+            ],
+            "version": "9.0.0",
+            "description": "Load pino logs into ElasticSearch",
+            "sanitized_name": "pino-elasticsearch",
+            "publisher": {
+              "email": "james.sumners@gmail.com",
+              "username": "jsumners"
+            },
+            "maintainers": [
+              {
+                "email": "hello@matteocollina.com",
+                "username": "matteo.collina"
+              },
+              {
+                "email": "james.sumners@gmail.com",
+                "username": "jsumners"
+              },
+              {
+                "email": "w@tson.dk",
+                "username": "watson"
+              },
+              {
+                "email": "tommydelved@gmail.com",
+                "username": "delvedor"
+              }
+            ],
+            "license": "MIT",
+            "date": "2026-05-07T10:46:16.572Z",
+            "links": {
+              "homepage": "https://github.com/pinojs/pino-elasticsearch#readme",
+              "repository": "git+https://github.com/pinojs/pino-elasticsearch.git",
+              "bugs": "https://github.com/pinojs/pino-elasticsearch/issues",
+              "npm": "https://www.npmjs.com/package/pino-elasticsearch"
+            }
+          },
+          "score": {
+            "final": 430.45718,
+            "detail": {
+              "popularity": 1,
+              "quality": 1,
+              "maintenance": 1
+            }
+          },
+          "flags": {
+            "insecure": 0
+          }
+        },
+        {
+          "downloads": {
+            "monthly": 494081,
+            "weekly": 130569
+          },
+          "dependents": "55",
+          "updated": "2026-06-29T05:20:23.628Z",
+          "searchScore": 407.70615,
+          "package": {
+            "name": "@nestjs/elasticsearch",
+            "keywords": [],
+            "version": "11.1.0",
+            "description": "Nest - modern, fast, powerful node.js web framework (@elasticsearch)",
+            "sanitized_name": "@nestjs/elasticsearch",
+            "publisher": {
+              "email": "admin@kamilmysliwiec.com",
+              "username": "nestjscore"
+            },
+            "maintainers": [
+              {
+                "email": "admin@kamilmysliwiec.com",
+                "username": "nestjscore"
+              },
+              {
+                "email": "mail@kamilmysliwiec.com",
+                "username": "kamilmysliwiec"
+              }
+            ],
+            "license": "MIT",
+            "date": "2025-04-17T11:44:18.860Z",
+            "links": {
+              "npm": "https://www.npmjs.com/package/@nestjs/elasticsearch"
+            }
+          },
+          "score": {
+            "final": 407.70615,
+            "detail": {
+              "popularity": 1,
+              "quality": 1,
+              "maintenance": 1
+            }
+          },
+          "flags": {
+            "insecure": 0
+          }
+        },
+        {
+          "downloads": {
+            "monthly": 444604,
+            "weekly": 117521
+          },
+          "dependents": "2",
+          "updated": "2026-06-29T11:55:22.692Z",
+          "searchScore": 394.4381,
+          "package": {
+            "name": "@testcontainers/elasticsearch",
+            "keywords": [
+              "elasticsearch",
+              "testing",
+              "docker",
+              "testcontainers"
+            ],
+            "version": "12.0.4",
+            "description": "Elasticsearch module for Testcontainers",
+            "sanitized_name": "@testcontainers/elasticsearch",
+            "publisher": {
+              "email": "cristianrgreco@gmail.com",
+              "actor": {
+                "name": "cristianrgreco",
+                "type": "user",
+                "email": "cristianrgreco@gmail.com"
+              },
+              "username": "cristianrgreco"
+            },
+            "maintainers": [
+              {
+                "email": "cristianrgreco@gmail.com",
+                "username": "cristianrgreco"
+              }
+            ],
+            "license": "MIT",
+            "date": "2026-06-29T11:54:51.933Z",
+            "links": {
+              "homepage": "https://github.com/testcontainers/testcontainers-node#readme",
+              "repository": "git+https://github.com/testcontainers/testcontainers-node.git",
+              "bugs": "https://github.com/testcontainers/testcontainers-node/issues",
+              "npm": "https://www.npmjs.com/package/@testcontainers/elasticsearch"
+            }
+          },
+          "score": {
+            "final": 394.4381,
+            "detail": {
+              "popularity": 1,
+              "quality": 1,
+              "maintenance": 1
+            }
+          },
+          "flags": {
+            "insecure": 0
+          }
+        },
+        {
+          "downloads": {
+            "monthly": 218826,
+            "weekly": 60714
+          },
+          "dependents": "15",
+          "updated": "2026-06-29T05:22:06.516Z",
+          "searchScore": 390.1057,
+          "package": {
+            "name": "opentelemetry-instrumentation-elasticsearch",
+            "keywords": [
+              "elasticsearch",
+              "@elastic/elasticsearch",
+              "opentelemetry"
+            ],
+            "version": "0.41.0",
+            "description": "open telemetry instrumentation for the `elasticsearch` module",
+            "sanitized_name": "opentelemetry-instrumentation-elasticsearch",
+            "publisher": {
+              "email": "dev@aspecto.io",
+              "username": "aspecto-release-bot"
+            },
+            "maintainers": [
+              {
+                "email": "dev@aspecto.io",
+                "username": "aspecto-release-bot"
+              },
+              {
+                "email": "yaniv.davi@gmail.com",
+                "username": "yanivd"
+              }
+            ],
+            "license": "Apache-2.0",
+            "date": "2024-05-21T11:39:42.289Z",
+            "links": {
+              "homepage": "https://github.com/aspecto-io/opentelemetry-ext-js",
+              "repository": "git+https://github.com/aspecto-io/opentelemetry-ext-js.git",
+              "bugs": "https://github.com/aspecto-io/opentelemetry-ext-js/issues",
+              "npm": "https://www.npmjs.com/package/opentelemetry-instrumentation-elasticsearch"
+            }
+          },
+          "score": {
+            "final": 390.1057,
+            "detail": {
+              "popularity": 1,
+              "quality": 1,
+              "maintenance": 1
+            }
+          },
+          "flags": {
+            "insecure": 0
+          }
+        },
+        {
+          "downloads": {
+            "monthly": 72587,
+            "weekly": 15615
+          },
+          "dependents": "2",
+          "updated": "2026-06-29T05:19:59.269Z",
+          "searchScore": 380.56323,
+          "package": {
+            "name": "@tryghost/elasticsearch",
+            "keywords": [],
+            "version": "5.3.1",
+            "description": "`npm install @tryghost/elasticsearch --save`",
+            "sanitized_name": "@tryghost/elasticsearch",
+            "publisher": {
+              "email": "npm-oidc-no-reply@github.com",
+              "trustedPublisher": {
+                "oidcConfigId": "oidc:4b96cba9-ad66-4c55-b2ab-bb4869b1edf0",
+                "id": "github"
+              },
+              "username": "GitHub Actions"
+            },
+            "maintainers": [
+              {
+                "email": "zimo@ghost.org",
+                "username": "zimoatghost"
+              },
+              {
+                "email": "fabien@allou.is",
+                "username": "allouis"
+              },
+              {
+                "email": "matthew@ghost.org",
+                "username": "kernalghost"
+              },
+              {
+                "email": "chris@ghost.org",
+                "username": "chrisraible"
+              },
+              {
+                "email": "github.erisds@gmail.com",
+                "username": "erisds"
+              },
+              {
+                "email": "john@onolan.org",
+                "username": "johnonolan"
+              },
+              {
+                "email": "kevin@ghost.org",
+                "username": "kevinansfield"
+              },
+              {
+                "email": "david@ghost.org",
+                "username": "cobbspur"
+              },
+              {
+                "email": "aileen@ghost.org",
+                "username": "aileencgn"
+              },
+              {
+                "email": "npmjs@jloh.co",
+                "username": "jloh"
+              },
+              {
+                "email": "sodbileg.gansukh@gmail.com",
+                "username": "minimaluminium"
+              },
+              {
+                "email": "hello@samlord.me",
+                "username": "sam-lord"
+              },
+              {
+                "email": "paul@ghost.org",
+                "username": "pauladamdavis"
+              },
+              {
+                "email": "bobvaneck@gmail.com",
+                "username": "bobvaneck"
+              },
+              {
+                "email": "account@joegrigg.com",
+                "username": "joeegrigg"
+              },
+              {
+                "email": "filip@ghost.org",
+                "username": "hadret"
+              },
+              {
+                "email": "jon@theplan.co.uk",
+                "username": "jonhickman"
+              },
+              {
+                "email": "erik@ghost.org",
+                "username": "erik-ghost"
+              },
+              {
+                "email": "guptazy@gmail.com",
+                "username": "sagzy"
+              },
+              {
+                "email": "vershwal.princi@gmail.com",
+                "username": "vershwal"
+              },
+              {
+                "email": "mike182uk@gmail.com",
+                "username": "mike182uk"
+              },
+              {
+                "email": "luis@ghost.org",
+                "username": "luissazevedo"
+              },
+              {
+                "email": "leif@ghost.org",
+                "username": "lsinger"
+              },
+              {
+                "email": "nick@ghost.org",
+                "username": "nickmoreton"
+              },
+              {
+                "email": "renatocesarcp@gmail.com",
+                "username": "renatoworks"
+              },
+              {
+                "email": "rob@ghost.org",
+                "username": "rblstr-ghost"
+              },
+              {
+                "email": "evan@ghost.org",
+                "username": "evanhahn-ghost"
+              },
+              {
+                "email": "weyland.swart@gmail.com",
+                "username": "weylandswart"
+              },
+              {
+                "email": "info@ghost.org",
+                "username": "ghost-slimer"
+              },
+              {
+                "email": "tmciesco@gmail.com",
+                "username": "tmciesco"
+              },
+              {
+                "email": "jonatan@ghost.org",
+                "username": "jonatan-ghost"
+              },
+              {
+                "email": "9larsons@gmail.com",
+                "username": "9larsons"
+              }
+            ],
+            "license": "MIT",
+            "date": "2026-06-24T22:48:13.412Z",
+            "links": {
+              "homepage": "https://github.com/TryGhost/framework#readme",
+              "repository": "git+https://github.com/TryGhost/framework.git",
+              "bugs": "https://github.com/TryGhost/framework/issues",
+              "npm": "https://www.npmjs.com/package/@tryghost/elasticsearch"
+            }
+          },
+          "score": {
+            "final": 380.56323,
+            "detail": {
+              "popularity": 1,
+              "quality": 1,
+              "maintenance": 1
+            }
+          },
+          "flags": {
+            "insecure": 0
+          }
+        },
+        {
+          "downloads": {
+            "monthly": 92847,
+            "weekly": 25200
+          },
+          "dependents": "4",
+          "updated": "2026-06-29T05:23:53.626Z",
+          "searchScore": 373.53232,
+          "package": {
+            "name": "aws-elasticsearch-js",
+            "keywords": [
+              "aws",
+              "elasticsearch",
+              "js",
+              "elastic",
+              "connector",
+              "sign",
+              "iam",
+              "amazon",
+              "es",
+              "signer"
+            ],
+            "version": "1.0.3",
+            "description": "Use elasticsearch-js with Amazon ES",
+            "sanitized_name": "aws-elasticsearch-js",
+            "publisher": {
+              "email": "mail@geoffwagstaff.com",
+              "username": "thedeveloper"
+            },
+            "maintainers": [
+              {
+                "email": "mail@geoffwagstaff.com",
+                "username": "thedeveloper"
+              }
+            ],
+            "license": "MIT",
+            "date": "2021-04-10T16:36:05.038Z",
+            "links": {
+              "homepage": "https://github.com/gosquared/aws-elasticsearch-js#readme",
+              "repository": "git+https://github.com/gosquared/aws-elasticsearch-js.git",
+              "bugs": "https://github.com/gosquared/aws-elasticsearch-js/issues",
+              "npm": "https://www.npmjs.com/package/aws-elasticsearch-js"
+            }
+          },
+          "score": {
+            "final": 373.53232,
+            "detail": {
+              "popularity": 1,
+              "quality": 1,
+              "maintenance": 1
+            }
+          },
+          "flags": {
+            "insecure": 0
+          }
+        },
+        {
+          "downloads": {
+            "monthly": 120746,
+            "weekly": 37136
+          },
+          "dependents": "44",
+          "updated": "2026-06-29T05:20:09.788Z",
+          "searchScore": 371.34937,
+          "package": {
+            "name": "aws-elasticsearch-connector",
+            "keywords": [
+              "elasticsearch",
+              "aws-es",
+              "aws",
+              "aws4",
+              "amazon",
+              "es",
+              "http",
+              "connector",
+              "extension",
+              "sign",
+              "http-aws-es",
+              "HttpConnection"
+            ],
+            "version": "9.2.0",
+            "description": "A tiny Amazon Signature Version 4 connection class for @elastic/elasticsearch, for compatibility with AWS Elasticsearch and IAM authentication.",
+            "sanitized_name": "aws-elasticsearch-connector",
+            "publisher": {
+              "email": "jhill9693@gmail.com",
+              "username": "compwright"
+            },
+            "maintainers": [
+              {
+                "email": "jhill9693@gmail.com",
+                "username": "compwright"
+              }
+            ],
+            "license": "MIT",
+            "date": "2022-05-16T20:59:13.054Z",
+            "links": {
+              "homepage": "https://github.com/compwright/aws-elasticsearch-connector#readme",
+              "repository": "git+https://github.com/compwright/aws-elasticsearch-connector.git",
+              "bugs": "https://github.com/compwright/aws-elasticsearch-connector/issues",
+              "npm": "https://www.npmjs.com/package/aws-elasticsearch-connector"
+            }
+          },
+          "score": {
+            "final": 371.34937,
+            "detail": {
+              "popularity": 1,
+              "quality": 1,
+              "maintenance": 1
+            }
+          },
+          "flags": {
+            "insecure": 0
+          }
+        }
+      ]
+    }
+  ],
+  "pypi_packages": {
+    "elasticsearch": {
+      "name": "elasticsearch",
+      "summary": "Python client for Elasticsearch",
+      "home_page": null,
+      "project_urls": {
+        "Documentation": "https://elasticsearch-py.readthedocs.io/",
+        "Homepage": "https://github.com/elastic/elasticsearch-py",
+        "Issue Tracker": "https://github.com/elastic/elasticsearch-py/issues",
+        "Source Code": "https://github.com/elastic/elasticsearch-py"
+      },
+      "license": null,
+      "version": "9.4.1"
+    },
+    "meilisearch": {
+      "name": "meilisearch",
+      "summary": "The python client for Meilisearch API.",
+      "home_page": null,
+      "project_urls": {
+        "Documentation": "https://meilisearch.github.io/meilisearch-python/",
+        "Homepage": "https://github.com/meilisearch/meilisearch-python",
+        "Meilisearch_Documentation": "https://www.meilisearch.com/docs"
+      },
+      "license": "MIT",
+      "version": "0.41.1"
+    },
+    "typesense": {
+      "name": "typesense",
+      "summary": "Python client for Typesense, an open source and typo tolerant search engine.",
+      "home_page": null,
+      "project_urls": {
+        "Documentation": "https://typesense.org/",
+        "Source": "https://github.com/typesense/typesense-python",
+        "Tracker": "https://github.com/typesense/typesense-python/issues"
+      },
+      "license": "Apache 2.0",
+      "version": "2.0.0"
+    },
+    "whoosh": {
+      "name": "Whoosh",
+      "summary": "Fast, pure-Python full text indexing, search, and spell checking library.",
+      "home_page": "http://bitbucket.org/mchaput/whoosh",
+      "project_urls": {
+        "Download": "UNKNOWN",
+        "Homepage": "http://bitbucket.org/mchaput/whoosh"
+      },
+      "license": "Two-clause BSD license",
+      "version": "2.7.4"
+    },
+    "tantivy": {
+      "name": "tantivy",
+      "summary": "Official Python bindings for the Tantivy search engine",
+      "home_page": null,
+      "project_urls": null,
+      "license": null,
+      "version": "0.26.0"
+    }
+  }
+}

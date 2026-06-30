@@ -1,0 +1,77 @@
+{
+  "original_request": "需要全文搜索和向量检索的开源方案",
+  "summary": "分布式搜索引擎选型",
+  "constraints": {
+    "languages": [],
+    "license_allow": [
+      "Apache-2.0",
+      "MIT"
+    ],
+    "license_deny": [
+      "GPL-3.0"
+    ],
+    "self_host_required": true,
+    "deployment": "Docker"
+  },
+  "capabilities": [
+    {
+      "id": "cap-1",
+      "name": "全文检索",
+      "description": "分布式全文搜索引擎，支持 RESTful API",
+      "required": true,
+      "keywords_en": [
+        "full-text search",
+        "search engine",
+        "distributed search"
+      ],
+      "keywords_zh": [
+        "全文检索",
+        "搜索引擎"
+      ],
+      "candidate_topics": [
+        "search",
+        "elasticsearch"
+      ],
+      "candidate_packages": []
+    },
+    {
+      "id": "cap-2",
+      "name": "向量检索",
+      "description": "向量相似度搜索，支持 ANN 索引",
+      "required": true,
+      "keywords_en": [
+        "vector search",
+        "embedding search",
+        "ANN"
+      ],
+      "keywords_zh": [
+        "向量检索",
+        "近似搜索"
+      ],
+      "candidate_topics": [
+        "vector-search",
+        "milvus"
+      ],
+      "candidate_packages": []
+    },
+    {
+      "id": "cap-3",
+      "name": "数据分析",
+      "description": "数据聚合与可视化分析",
+      "required": false,
+      "keywords_en": [
+        "analytics",
+        "aggregation",
+        "data analysis"
+      ],
+      "keywords_zh": [
+        "数据分析",
+        "聚合"
+      ],
+      "candidate_topics": [
+        "analytics"
+      ],
+      "candidate_packages": []
+    }
+  ]
+}

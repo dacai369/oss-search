@@ -1,0 +1,131 @@
+# 采集信源白名单（对应 ADR-002：定向白名单，不爬全网）
+# 加新源只改这个文件。enabled=false 的源采集层跳过。
+# access: api(官方接口) | rss(订阅) | scrape(需抓取) —— 优先级 api > rss > scrape
+
+version: 1
+
+# ============ 代码平台 ============
+code_platforms:
+  - id: github
+    name: GitHub
+    access: api
+    endpoint: https://api.github.com
+    enabled: true
+    priority: 1
+    note: 主力源，GraphQL/REST，MVP 必做
+
+  - id: gitee
+    name: 码云 Gitee
+    access: api
+    endpoint: https://gitee.com/api/v5
+    enabled: false
+    priority: 3
+    note: 中文项目补充，V2
+
+  - id: gitlab
+    name: GitLab
+    access: api
+    endpoint: https://gitlab.com/api/v4
+    enabled: false
+    priority: 4
+
+# ============ 包 / 注册仓库 ============
+package_registries:
+  - id: npm
+    name: npm
+    access: api
+    endpoint: https://registry.npmjs.org
+    enabled: true
+    priority: 2
+
+  - id: pypi
+    name: PyPI
+    access: api
+    endpoint: https://pypi.org/pypi
+    enabled: true
+    priority: 2
+
+  - id: libraries_io
+    name: Libraries.io
+    access: api
+    endpoint: https://libraries.io/api
+    enabled: false
+    priority: 3
+    note: 跨注册表聚合，需 API key
+
+# ============ 内容平台（定向白名单）============
+# 重点：优先收录"发现型"信源——它们本身就在帮人找开源项目
+content_sources:
+  # —— 开源发现型（最高价值）——
+  - id: hellogithub
+    name: HelloGitHub
+    access: api
+    endpoint: https://hellogithub.com
+    enabled: true
+    priority: 2
+    note: 月刊式开源项目推荐，有结构化数据，强相关，MVP 可先接这个验证内容源链路
+
+  - id: ruanyifeng_weekly
+    name: 阮一峰·科技爱好者周刊
+    access: rss
+    endpoint: https://www.ruanyifeng.com/blog/atom.xml
+    enabled: false
+    priority: 3
+    note: 每期推荐多个开源项目/工具
+
+  # —— 公众号（定向，V2）——
+  # 公众号无官方 API，access=scrape，需走第三方/RSS 镜像；MVP 不启用
+  - id: gzh_githubdaily
+    name: GitHubDaily（公众号）
+    access: scrape
+    handle: GitHubDaily
+    enabled: false
+    priority: 5
+    note: 每日开源项目推荐，强相关
+
+  - id: gzh_hellogithub
+    name: HelloGitHub（公众号）
+    access: scrape
+    handle: HelloGitHub
+    enabled: false
+    priority: 5
+
+  - id: gzh_oschina
+    name: 开源中国 OSCHINA（公众号）
+    access: scrape
+    handle: oschina2013
+    enabled: false
+    priority: 5
+
+  # —— 技术社区（有 RSS/接口的优先）——
+  - id: juejin
+    name: 掘金
+    access: scrape
+    endpoint: https://juejin.cn
+    enabled: false
+    priority: 4
+
+  - id: hackernews
+    name: Hacker News
+    access: api
+    endpoint: https://hn.algolia.com/api/v1
+    enabled: false
+    priority: 4
+    note: Show HN / 项目发布，英文源，接口友好
+
+# ============ 运行时自定义源（ADR-008）============
+# 本文件是"内置白名单"。用户在调用 skill/CLI 时可追加自定义源，
+# 引擎按 [白名单 ∪ 自定义源] 合并采集，由 GenericUrlAdapter 统一处理。
+# 自定义源不写死在这里——通过参数传入，例如：
+#   oss-search "..." --source https://example.com/blog --source https://x.com/feed.xml
+# 也可放到本地 custom_sources.yaml（git 忽略），结构同 content_sources。
+
+# ============ 自有种子数据 ============
+# 本仓库已有的中文 GitHub 项目数据，可做测试集/冷启动
+seed_data:
+  - id: local_csv
+    name: 本地中文项目CSV
+    access: file
+    path: ../github_chinese_top_projects.csv
+    enabled: true
+    note: 已存在的种子数据，用于测试与冷启动

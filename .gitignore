@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+.env
+*.swp
+*.swo
+.DS_Store
+tests/fixtures/*.json
+tmp/

@@ -1,0 +1,5 @@
+# 核心引擎依赖
+openai>=1.0        # LLM 调用（DeepSeek 走 OpenAI 兼容协议，ADR-005）
+
+# 开发/测试（可选）
+# pytest>=7.0
