@@ -34,36 +34,43 @@ class SourceAdapter(Protocol):
 
 
 def expand_queries(cap: Capability) -> List[str]:
-    """将一个能力的 keywords_en + candidate_topics 去重组合成查询列表。
+    """将能力的 candidate_packages + candidate_topics + keywords_en 生成查询列表。
 
-    策略：
-    1. 每个 topic 生成一条 topic: 限定查询（组合所有关键词）
-    2. 无边 topic 时，用关键词直接查询
-    返回去重后的查询字符串列表。
+    策略（优先级递减）：
+    1. candidate_packages 直接按包名搜（最精准，确保旗舰库能被召回）
+    2. 每个 topic 单独查询（不叠加关键词，扩大召回）
+    3. 关键词逐条查（不全部合并为 AND，避免过度限定导致召回为零）
     """
     queries: List[str] = []
     seen: Set[str] = set()
     keywords = [k.strip().lower() for k in cap.keywords_en if k.strip()]
 
-    if not keywords:
+    if not keywords and not cap.candidate_topics and not cap.candidate_packages:
         return queries
 
-    kw_joined = "+".join(keywords)
+    # 1. candidate_packages 直接搜包名（精准命中已知候选库）
+    for pkg in cap.candidate_packages:
+        q = pkg.strip()
+        if q and q not in seen:
+            seen.add(q)
+            queries.append(q)
 
-    # topic + 关键词组合查询
+    # 2. 每个 topic 单独查询（topic:xxx 形式，不合并关键词）
     for topic in cap.candidate_topics:
         t = topic.strip().lower()
         if not t:
             continue
-        q = f"topic:{t}+{kw_joined}"
+        q = f"topic:{t}"
         if q not in seen:
             seen.add(q)
             queries.append(q)
 
-    # 纯关键词查询
-    if kw_joined not in seen:
-        seen.add(kw_joined)
-        queries.append(kw_joined)
+    # 3. 关键词逐条查（每条独立，避免 AND 合并后召回为零）
+    for kw in keywords:
+        q = kw.replace(" ", "+")
+        if q not in seen:
+            seen.add(q)
+            queries.append(q)
 
     return queries
 

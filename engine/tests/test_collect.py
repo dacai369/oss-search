@@ -58,16 +58,17 @@ class TestQueryExpansion(unittest.TestCase):
         # 检查去重
         self.assertEqual(len(queries), len(set(queries)), msg="查询应去重")
 
-    def test_no_keywords_returns_empty(self):
-        cap = _make_cap(1, keywords_en=[], keywords_zh=[])
+    def test_no_query_sources_returns_empty(self):
+        """keywords/topics/packages 全空才返回空列表。"""
+        cap = _make_cap(1, keywords_en=[], keywords_zh=[], candidate_topics=[], candidate_packages=[])
         self.assertEqual(expand_queries(cap), [])
 
     def test_keywords_deduplicated(self):
         cap = _make_cap(1, keywords_en=["search", "SEARCH", "  search  "])
         queries = expand_queries(cap)
-        self.assertEqual(
-            len(queries), 1 + len(cap.candidate_topics),  # 去重后只剩一条 keyword
-        )
+        # 去重后：1 条 keyword + topics 条数 + packages 条数
+        expected = 1 + len(cap.candidate_topics) + len(cap.candidate_packages)
+        self.assertEqual(len(queries), expected, msg=f"期望 {expected} 条，实际 {len(queries)}：{queries}")
 
 
 # ============ 2. Candidate 契约 ============

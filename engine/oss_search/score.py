@@ -39,18 +39,27 @@ def score(
         w.update(weights)
 
     # 收集所有文本用于 IDF
-    all_texts = [c.description or "" + " " + (c.readme_excerpt or "") for c in candidates]
-    query_text = " ".join(
-        f"{c.name} {c.description} " + " ".join(c.keywords_en)
-        for c in spec.capabilities
-    )
+    all_texts = [(c.description or "") + " " + (c.readme_excerpt or "") for c in candidates]
+
+    # 按能力 id 建立查询文本（per-capability relevance，避免全部合并稀释信号）
+    cap_query_map: Dict[str, str] = {}
+    candidate_pkg_set: set = set()
+    for c in spec.capabilities:
+        cap_query_map[c.id] = " ".join(
+            [c.name, c.description or ""] + c.keywords_en + c.keywords_zh
+        )
+        for pkg in c.candidate_packages:
+            candidate_pkg_set.add(pkg.lower().replace("-", "_").replace(".", "_"))
+
+    fallback_query = " ".join(cap_query_map.values())
 
     scored = []
     for cand in candidates:
         dims = {}
         reasons = []
 
-        dims["relevance"], r_rel = _relevance(cand, query_text, all_texts, candidates)
+        cap_query = cap_query_map.get(cand.matched_capability or "", fallback_query)
+        dims["relevance"], r_rel = _relevance(cand, cap_query, all_texts, candidates, candidate_pkg_set)
         reasons.append(r_rel)
 
         dims["activity"], r_act = _activity(cand)
@@ -87,9 +96,17 @@ def score(
 
 
 def _relevance(
-    cand: Candidate, query: str, all_texts: List[str], candidates: List[Candidate]
+    cand: Candidate, query: str, all_texts: List[str], candidates: List[Candidate],
+    candidate_pkg_set: Optional[set] = None,
 ) -> tuple:
     """BM25 简易实现（ADR-006：MVP 降级）。"""
+    # candidate_packages 直接命中：用户明确指定的候选包，跳过 BM25 直接给高分
+    if candidate_pkg_set:
+        name_key = (cand.name or "").lower().replace("-", "_").replace(".", "_")
+        for pkg in candidate_pkg_set:
+            if pkg and (pkg in name_key or name_key in pkg):
+                return 0.85, "明确指定的候选包，契合度极高"
+
     doc = (cand.description or "") + " " + (cand.readme_excerpt or "")
     if not doc.strip():
         return 0.0, "缺少项目描述，无法评估契合度"
@@ -176,8 +193,12 @@ def _activity(cand: Candidate) -> tuple:
 
 def _community(cand: Candidate) -> tuple:
     """社区规模：stars/forks/contributors。"""
-    stars = cand.stars or 0
+    stars = cand.stars
     forks = cand.forks or 0
+
+    # npm/PyPI 包没有 star 数据，给中性分而非惩罚分
+    if stars is None:
+        return 0.5, "无 star 数据（npm/PyPI 包），社区规模未知"
 
     if stars == 0:
         return 0.1, "社区极小（0 star）"
